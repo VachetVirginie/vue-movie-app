@@ -1,7 +1,7 @@
 # movie-app
-![40% center](images/Home.png)
-![40% center](images/liste.png)
-![40% center](images/film.png)
+![40% center](./images/Home.png)
+![40% center](./images/liste.png)
+![40% center](./images/film.png)
 ## Project setup
 ```
 npm install
