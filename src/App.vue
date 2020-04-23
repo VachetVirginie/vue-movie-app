@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <router-view></router-view>
     <v-app-bar
       app
       color="primary"
@@ -38,19 +39,19 @@
     </v-app-bar>
 
     <v-content>
-      <HelloWorld/>
+      <LatestMovie/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import LatestMovie from './components/LatestMovie';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    LatestMovie,
   },
 
   data: () => ({
