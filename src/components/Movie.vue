@@ -1,10 +1,10 @@
 <template>
 
   <v-container v-if="loading">
-    <div class="text-xs-center">
+    <div class="text-center">
         <v-progress-circular
           indeterminate
-          :size="150"
+          :size="50"
           :width="8"
           color="green accent-3">
         </v-progress-circular>
@@ -28,6 +28,7 @@
                <h4>Awards:</h4> {{singleMovie.Awards}}
                <p>Genre: {{singleMovie.Genre}}</p>
             </div>
+
           </v-card-title>
           <v-card-actions>
             <v-btn flat color="green accent-3" @click="back">back</v-btn>
