@@ -31,7 +31,12 @@
               <div>IMDB-id: {{item.imdbID}}</div>
             </div>
           </v-card-title>
-
+<v-rating
+      v-model="rating"
+      background-color="orange lighten-3"
+      color="orange"
+      small
+    ></v-rating>
           <v-card-actions>
             <v-btn round
               color="green accent-3"
@@ -52,7 +57,8 @@ export default {
   data () {
     return {
       movieResponse: [],
-      loading: true
+      loading: true,
+            rating: 0,
     }
   },
   methods: {
