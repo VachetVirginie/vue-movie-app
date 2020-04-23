@@ -18,6 +18,8 @@
         </v-text-field>
         </v-flex>
       <v-btn
+      class="ml-2"
+      color="green accent-3"
         flat
         :disabled="!dataAvailable"
         @click="searchMovie"
@@ -25,7 +27,7 @@
        <span class="mr-2">Search</span>
       </v-btn>
         <v-switch
-        class="ml-2"
+        class="ml-12"
         v-model="$vuetify.theme.dark"
         hide-details
         inset
