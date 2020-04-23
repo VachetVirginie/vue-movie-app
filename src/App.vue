@@ -13,7 +13,7 @@
       <v-flex xs12 sm6 md3>
         <v-text-field
           label='Movie Name'
-          v-model='searchString'
+          v-model='searchName'
           >
         </v-text-field>
         </v-flex>
@@ -25,6 +25,7 @@
        <span class="mr-2">Search</span>
       </v-btn>
         <v-switch
+        class="ml-2"
         v-model="$vuetify.theme.dark"
         hide-details
         inset
@@ -45,18 +46,18 @@ export default {
   },
   data () {
     return {
-      searchString: ''
+      searchName: ''
     }
   },
   methods: {
     searchMovie () {
-      this.$router.push('/search/' + this.searchString)
-      this.searchString = ''
+      this.$router.push('/search/' + this.searchName)
+      this.searchName = ''
     }
   },
   computed: {
     dataAvailable () {
-      return this.searchString !== null && this.searchString !== ''
+      return this.searchName !== null && this.searchName !== ''
     }
   }
 }
