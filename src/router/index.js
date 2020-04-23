@@ -1,10 +1,16 @@
 import Vue from 'vue'
-import './plugins/vuetify'
-import App from './App.vue'
-import router from './router'
+import VueRouter from 'vue-router'
+import HelloWorld from '@/components/HelloWorld'
 
-Vue.config.productionTip = false
-new Vue({
-  render: h => h(App),
-  router
-}).$mount('#app')
+
+Vue.use(VueRouter)
+
+export default new VueRouter({
+  routes: [
+    {
+      path: '/',
+      name: 'HelloWorld',
+      component: HelloWorld
+    }
+  ],
+})
