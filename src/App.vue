@@ -1,61 +1,63 @@
 <template>
   <v-app>
-    <router-view></router-view>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
+    <v-toolbar app>
+      <v-toolbar-title class="headline text-uppercase">
+        <router-link
+        to='/'
+        tag='span'
+        style='cursor: pointer'>
+        Movie Source
+        </router-link>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
-
+      <v-flex xs12 sm6 md3>
+        <v-text-field
+          label='Movie Name'
+          v-model='searchString'
+          >
+        </v-text-field>
+        </v-flex>
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
+        flat
+        :disabled="!dataAvailable"
+        @click="searchMovie"
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+       <span class="mr-2">Search</span>
       </v-btn>
-    </v-app-bar>
+        <v-switch
+        v-model="$vuetify.theme.dark"
+        hide-details
+        inset
+        label="Mode"
+      ></v-switch>
+    </v-toolbar>
 
     <v-content>
-      <LatestMovie/>
+    <router-view></router-view>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import LatestMovie from './components/LatestMovie';
-
 export default {
   name: 'App',
-
   components: {
-    LatestMovie,
   },
-
-  data: () => ({
-    //
-  }),
-};
+  data () {
+    return {
+      searchString: ''
+    }
+  },
+  methods: {
+    searchMovie () {
+      this.$router.push('/search/' + this.searchString)
+      this.searchString = ''
+    }
+  },
+  computed: {
+    dataAvailable () {
+      return this.searchString !== null && this.searchString !== ''
+    }
+  }
+}
 </script>

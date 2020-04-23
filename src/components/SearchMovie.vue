@@ -1,4 +1,6 @@
-<template><v-container v-if="loading">
+<template>
+
+  <v-container v-if="loading">
     <div class="text-xs-center">
       <v-progress-circular
         indeterminate
@@ -7,59 +9,82 @@
         color="green">
       </v-progress-circular>
     </div>
-  </v-container><v-container v-else grid-list-xl>
+  </v-container>
+
+  <v-container v-else grid-list-xl>
     <v-layout wrap>
       <v-flex xs4
-        v-for="(item, index) in wholeResponse"
+        v-for="(item, index) in movieResponse"
         :key="index"
         mb-2>
         <v-card>
           <v-img
             :src="item.Poster"
             aspect-ratio="1"
-          ></v-img><v-card-title primary-title>
+          ></v-img>
+
+          <v-card-title primary-title>
             <div>
               <h2>{{item.Title}}</h2>
               <div>Year: {{item.Year}}</div>
               <div>Type: {{item.Type}}</div>
               <div>IMDB-id: {{item.imdbID}}</div>
             </div>
-          </v-card-title><v-card-actions class="justify-center">
-            <v-btn flat
+          </v-card-title>
+
+          <v-card-actions>
+            <v-btn round
               color="green"
               @click="singleMovie(item.imdbID)"
               >View</v-btn>
-          </v-card-actions></v-card>
+            <v-btn round color="green">Visit site</v-btn>
+          </v-card-actions>
+
+        </v-card>
       </v-flex>
   </v-layout>
   </v-container>
-</template><script>
+</template>
+
+<script>
 import axios from 'axios'
 export default {
+  props: ['name'],
   data () {
     return {
-      wholeResponse: [],
+      movieResponse: [],
       loading: true
     }
   },
   methods: {
     singleMovie (id) {
       this.$router.push('/movie/' + id)
+    },
+    fetchResult (value) {
+      const url = 'http://www.omdbapi.com/?apikey=e1fc07da&Content-Type=application/json' + '&s=' + value
+      axios
+        .get(url)
+        .then(response => {
+          this.movieResponse = response.data.Search
+          this.loading = false
+        })
+        .catch(error => {
+          console.log(error)
+        })
     }
   },
   mounted () {
-  axios
-    .get('http://www.omdbapi.com/?s=star&apikey=e1fc07da&page=1&type=movie&Content-Type=application/json')
-    .then(response => {
-      this.wholeResponse = response.data.Search
-      this.loading = false
-    })
-    .catch(error => {
-      console.log(error)
-    })
+    this.fetchResult(this.name)
+  },
+  watch: {
+    name (value) {
+      this.fetchResult(value)
+    }
   }
 }
-</script><style lang="stylus" scoped>
+</script>
+
+<style lang="stylus" scoped>
   .v-progress-circular
     margin: 1rem
 </style>
