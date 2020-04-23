@@ -6,7 +6,7 @@
         to='/'
         tag='span'
         style='cursor: pointer'>
-        Movie Source
+         Which movie ?
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -62,3 +62,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.v-toolbar {
+    flex: none !important;
+}
+</style>

@@ -12,6 +12,7 @@
   </v-container>
 
   <v-container v-else>
+    <app-navigation></app-navigation>
     <v-layout wrap>
       <v-flex xs12 mr-1 ml-1>
         <v-card>
