@@ -12,7 +12,7 @@ Vue.use(VueRouter)
 export default new VueRouter({
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'Home',
       component: Home
     },
@@ -34,15 +34,15 @@ export default new VueRouter({
       component: SearchMovie
     },
     {
-      path: '/login',
+      path: '/',
       name: 'login',
       component: Login
-  },
-  {
+     },
+    {
       path: '/register',
       name: 'Register',
       component: Register
-  }
+    }
   ],
   mode: 'history'
 }

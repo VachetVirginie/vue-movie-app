@@ -47,6 +47,12 @@
                 </div>
               </div>
             </form>
+        <router-link
+        to='/register'
+        tag='span'
+        style='cursor: pointer'>
+         Create an account
+        </router-link>
           </div>
         </div>
       </div>
