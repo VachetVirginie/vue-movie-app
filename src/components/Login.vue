@@ -1,19 +1,18 @@
 
 
 <template>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card">
+    <v-container class="ml-6">
+   <v-row>
+      <v-col
+        cols="12"
+        sm="6"
+      >
           <div class="card-header">Login</div>
           <div class="card-body">
             <div v-if="error" class="alert alert-danger">{{error}}</div>
-            <form action="#" @submit.prevent="submit">
-              <div class="form-group row">
-                <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
-
-                <div class="col-md-6">
-                  <input
+            <v-form action="#" @submit.prevent="submit">
+                    <v-text-field
+                    label="Name"
                     id="email"
                     type="email"
                     class="form-control"
@@ -22,31 +21,27 @@
                     required
                     autofocus
                     v-model="form.email"
-                  />
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-
-                <div class="col-md-6">
-                  <input
+                    >
+                   </v-text-field>
+                    <v-text-field
+                    label="Password"
                     id="password"
                     type="password"
                     class="form-control"
                     name="password"
                     required
                     v-model="form.password"
-                  />
-                </div>
-              </div>
+                >
+                </v-text-field>
 
-              <div class="form-group row mb-0">
-                <div class="col-md-8 offset-md-4">
-                  <button type="submit" class="btn btn-primary">Login</button>
-                </div>
-              </div>
-            </form>
+                <v-btn
+                  color="green accent-3"
+                  class="mr-4"
+                  type="submit"
+                >
+                   Login
+                </v-btn>
+            </v-form>
         <router-link
         to='/register'
         tag='span'
@@ -54,10 +49,9 @@
          Create an account
         </router-link>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+     </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
