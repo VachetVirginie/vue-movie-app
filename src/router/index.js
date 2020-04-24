@@ -6,7 +6,6 @@ import SearchMovie from '@/components/SearchMovie'
 import Home from '@/components/Home'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
-import Dashboard from '@/components/Dashboard'
 
 Vue.use(VueRouter)
 
