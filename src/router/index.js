@@ -4,6 +4,9 @@ import LatestMovie from '@/components/LatestMovie'
 import Movie from '@/components/Movie'
 import SearchMovie from '@/components/SearchMovie'
 import Home from '@/components/Home'
+import Login from '@/components/Login'
+import Register from '@/components/Register'
+import Dashboard from '@/components/Dashboard'
 
 Vue.use(VueRouter)
 
@@ -30,7 +33,22 @@ export default new VueRouter({
       name: 'SearchMovie',
       props: true,
       component: SearchMovie
-    }
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+  },
+  {
+      path: '/register',
+      name: 'Register',
+      component: Register
+  },
+  {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard
+  }
   ],
   mode: 'history'
 }
