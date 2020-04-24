@@ -43,11 +43,6 @@ export default new VueRouter({
       path: '/register',
       name: 'Register',
       component: Register
-  },
-  {
-      path: '/dashboard',
-      name: 'Dashboard',
-      component: Dashboard
   }
   ],
   mode: 'history'
