@@ -11,7 +11,7 @@
     </div>
   </v-container>
 
-  <v-container v-else grid-list-xl>
+  <v-container v-else grid-list-xs>
     <v-layout wrap>
       <v-flex xs4
         v-for="(item, index) in movieResponse"

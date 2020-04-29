@@ -18,7 +18,7 @@
         <v-card>
           <v-img
             :src="singleMovie.Poster"
-            aspect-ratio="2"
+            aspect-ratio="1"
           ></v-img>
           <v-card-title primary-title>
             <div>
