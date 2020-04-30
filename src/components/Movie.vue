@@ -25,7 +25,8 @@
       <v-card-title></v-card-title>
     </v-img>
 
-     <h1 class="ml-4 pt-2">{{singleMovie.Title}}-{{singleMovie.Year}}</h1>
+     <h1 class="ml-4 pt-2">{{singleMovie.Title}}</h1>
+     <h2>{{singleMovie.Year}}</h2>
            <v-rating
         v-model="rating"
         length="10"

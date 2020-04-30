@@ -8,7 +8,7 @@
     >
       <template v-slot:activator="{ on }">
         <v-btn
-          color="indigo"
+          color="#34558b"
           dark
           v-on="on"
         >

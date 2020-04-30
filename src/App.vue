@@ -98,4 +98,7 @@ export default {
 .v-toolbar {
     flex: none !important;
 }
+button {
+  color: white !important
+}
 </style>

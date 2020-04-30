@@ -53,6 +53,12 @@
                 <v-btn type="submit" color="#34558b">Login</v-btn>
               </v-card-actions>
             </v-form>
+            <router-link
+        to='/register'
+        tag='span'
+        style='cursor: pointer'>
+         Create an account
+        </router-link>
               </v-card-text>
             </v-card>
           </v-col>
@@ -90,3 +96,9 @@ export default {
   }
 };
 </script>
+
+<style lang="stylus" scoped>
+
+  .v-btn
+    color: white !important
+</style>
