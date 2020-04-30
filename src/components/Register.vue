@@ -1,18 +1,33 @@
 <template>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header">Register</div>
-          <div class="card-body">
-            <div v-if="error" class="alert alert-danger">{{error}}</div>
-            <form action="#" @submit.prevent="submit">
-              <div class="form-group row">
-                <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
-
-                <div class="col-md-6">
-                  <input
-                    id="name"
+  <v-app id="inspire">
+    <v-content>
+      <v-container
+        class="fill-height"
+        fluid
+      >
+        <v-row
+          align="center"
+          justify="center"
+        >
+          <v-col
+            cols="12"
+            sm="8"
+            md="4"
+          >
+       <div v-if="error" class="alert alert-danger">{{error}}</div>
+            <v-card class="elevation-12">
+              <v-toolbar
+                color="green accent-3"
+                dark
+                flat
+              >
+                <v-toolbar-title>Register form</v-toolbar-title>
+                <v-spacer />
+              </v-toolbar>
+              <v-card-text>
+                <v-form action="#" @submit.prevent="submit">
+                <v-text-field
+                  id="name"
                     type="name"
                     class="form-control"
                     name="name"
@@ -20,16 +35,10 @@
                     required
                     autofocus
                     v-model="form.name"
-                  />
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
-
-                <div class="col-md-6">
-                  <input
-                    id="email"
+                    >
+                   </v-text-field>
+                    <v-text-field
+                   id="email"
                     type="email"
                     class="form-control"
                     name="email"
@@ -37,38 +46,30 @@
                     required
                     autofocus
                     v-model="form.email"
-                  />
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-
-                <div class="col-md-6">
-                  <input
+                    >
+                   </v-text-field>
+                    <v-text-field
                     id="password"
                     type="password"
                     class="form-control"
                     name="password"
                     required
                     v-model="form.password"
-                  />
-                </div>
-              </div>
-
-              <div class="form-group row mb-0">
-                <div class="col-md-8 offset-md-4">
-                  <button type="submit" class="btn btn-primary">Register</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+                >
+                </v-text-field>
+                              <v-card-actions>
+                <v-spacer />
+                <v-btn type="submit" color="green accent-3">Login</v-btn>
+              </v-card-actions>
+            </v-form>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
-
 
 <script>
 import firebase from "firebase";
