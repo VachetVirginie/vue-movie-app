@@ -17,7 +17,7 @@
        <div v-if="error" class="alert alert-danger">{{error}}</div>
             <v-card class="elevation-12">
               <v-toolbar
-                color="green accent-3"
+                color="#34558b"
                 dark
                 flat
               >
@@ -59,7 +59,7 @@
                 </v-text-field>
                               <v-card-actions>
                 <v-spacer />
-                <v-btn type="submit" color="green accent-3">Login</v-btn>
+                <v-btn type="submit" color="#34558b">Login</v-btn>
               </v-card-actions>
             </v-form>
               </v-card-text>

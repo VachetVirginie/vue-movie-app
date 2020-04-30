@@ -4,7 +4,7 @@
         indeterminate
         :size="150"
         :width="8"
-        color="green accent-3">
+        color="#34558b">
       </v-progress-circular>
     </div>
   </v-container><v-container v-else grid-list-xl>
@@ -26,7 +26,7 @@
             </div>
           </v-card-title><v-card-actions class="justify-center">
             <v-btn flat
-              color="green accent-3"
+              color="#34558b"
               @click="singleMovie(item.imdbID)"
               >View</v-btn>
           </v-card-actions></v-card>

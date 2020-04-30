@@ -47,7 +47,7 @@
             <v-list-item-action>
                  <v-switch
                      v-model="$vuetify.theme.dark"
-                     color="green accent-3"
+                     color="#34558b"
                       hide-details
                       inset
                  ></v-switch>
@@ -58,7 +58,7 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-             <v-btn @click.prevent="signOut">signOut</v-btn>
+             <v-btn flat color="#34558b" @click.prevent="signOut">signOut</v-btn>
         </v-card-actions>
       </v-card>
     </v-menu>
@@ -85,7 +85,7 @@ import firebase from "firebase";
         .signOut()
         .then(() => {
           this.$router.replace({
-            name: "GoodBye"
+            name: "Login"
           });
         });
     }

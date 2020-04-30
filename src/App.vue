@@ -3,7 +3,7 @@
     <v-toolbar app v-if="user.loggedIn">
       <v-toolbar-title class="headline text-uppercase">
         <router-link
-        to='/'
+        to='/Home'
         tag='span'
         style='cursor: pointer'>
          Hello {{user.data.displayName}}!
@@ -19,7 +19,7 @@
         </v-flex>
       <v-btn
       class="ml-2"
-      color="green accent-3"
+      color="#34558b"
         flat
         :disabled="!dataAvailable"
         @click="searchMovie"

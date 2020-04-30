@@ -7,8 +7,6 @@ import Home from '@/components/Home'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import Menu from '@/components/Menu'
-import Form from '@/components/Form'
-import GoodBye from '@/components/GoodBye'
 
 
 
@@ -52,16 +50,6 @@ export default new VueRouter({
       path: '/menu',
       name: 'Menu',
       component: Menu
-    },
-    {
-      path: '/form',
-      name: 'Form',
-      component: Form
-    },
-    {
-      path: '/goodbye',
-      name: 'GoodBye',
-      component: GoodBye
     }
   ],
   mode: 'history'

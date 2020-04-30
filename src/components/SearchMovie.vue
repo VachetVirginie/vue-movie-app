@@ -6,7 +6,7 @@
         indeterminate
         :size="150"
         :width="8"
-        color="green accent-3">
+        color="#34558b">
       </v-progress-circular>
     </div>
   </v-container>
@@ -35,15 +35,9 @@
               <div>IMDB-id: {{item.imdbID}}</div>
     </v-card-text>
 
- <v-rating
-      v-model="rating"
-      background-color="orange lighten-3"
-      color="orange"
-      small
-    ></v-rating>
           <v-card-actions>
             <v-btn round
-              color="green accent-3"
+              color="#34558b"
               @click="singleMovie(item.imdbID)"
               >View</v-btn>
           </v-card-actions>
@@ -61,7 +55,7 @@ export default {
     return {
       movieResponse: [],
       loading: true,
-            rating: 0,
+      rating: 0,
     }
   },
   methods: {
@@ -95,4 +89,7 @@ export default {
 <style lang="stylus" scoped>
   .v-progress-circular
     margin: 1rem
+
+  .v-btn
+    color: white !important
 </style>
