@@ -13,25 +13,29 @@
 
   <v-container v-else grid-list-xs>
     <v-layout wrap>
-      <v-flex xs4
+      <v-flex xs6
         v-for="(item, index) in movieResponse"
         :key="index"
         mb-2>
         <v-card>
-          <v-img
-            :src="item.Poster"
-            aspect-ratio="1"
-          ></v-img>
+    <v-img
+      class="ml-12"
+            max-height="550px"
+            max-width="300px"
+      :src="item.Poster"
+    >
+    </v-img>
 
-          <v-card-title primary-title>
-            <div>
+    <v-card-subtitle class="pb-0">{{ singleMovie.Plot}}</v-card-subtitle>
+
+    <v-card-text class="text--primary">
               <h2>{{item.Title}}</h2>
               <div>Year: {{item.Year}}</div>
               <div>Type: {{item.Type}}</div>
               <div>IMDB-id: {{item.imdbID}}</div>
-            </div>
-          </v-card-title>
-<v-rating
+    </v-card-text>
+
+ <v-rating
       v-model="rating"
       background-color="orange lighten-3"
       color="orange"
@@ -43,8 +47,7 @@
               @click="singleMovie(item.imdbID)"
               >View</v-btn>
           </v-card-actions>
-
-        </v-card>
+  </v-card>
       </v-flex>
   </v-layout>
   </v-container>

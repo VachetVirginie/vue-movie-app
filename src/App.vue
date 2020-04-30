@@ -6,7 +6,7 @@
         to='/'
         tag='span'
         style='cursor: pointer'>
-         Which movie ?
+         Hello {{user.data.displayName}}!
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -46,14 +46,11 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto"></ul>
-        <ul class="navbar-nav ml-auto">
+      <div class="collapse navbar-collapse d-flex mb-4" id="navbarSupportedContent">
           <template v-if="user.loggedIn">
-            <div class="nav-item">{{user.data.displayName}}</div>
-            <li class="nav-item">
-              <a class="nav-link" @click.prevent="signOut">Sign out</a>
-            </li>
+            <v-btn class="nav-item">
+              <span class="nav-link" @click.prevent="signOut">Sign out</span>
+            </v-btn>
           </template>
           <template v-else>
             <li class="nav-item">
@@ -63,7 +60,6 @@
               <router-link to="register" class="nav-link">Register</router-link>
             </li>
           </template>
-        </ul>
       </div>
     </div>
   </nav>
@@ -85,7 +81,8 @@ export default {
   },
   data () {
     return {
-      searchName: ''
+      searchName: '',
+      
     }
   },
   methods: {
