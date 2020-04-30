@@ -1,10 +1,11 @@
 
 
 <template>
-    <v-container class="ml-6">
+    <v-container>
+          <img src="https://img2.freepng.fr/20180419/tdq/kisspng-film-cinema-logo-cinema-x-chin-5ad8baa1dec9f4.9139666015241529939126.jpg" width="300px">
+
    <v-row>
       <v-col
-        cols="12"
         sm="6"
       >
           <div class="card-header">Login</div>
