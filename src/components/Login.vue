@@ -98,7 +98,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-
+  .v-app
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpaperplay.com%2Fboard%2Fmovie-screen-wallpapers&psig=AOvVaw241Tqyv44AD7vNJA_LM1fn&ust=1588348443480000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKiRj5rBkOkCFQAAAAAdAAAAABAD');
   .v-btn
     color: white !important
 </style>

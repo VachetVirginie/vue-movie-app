@@ -35,6 +35,8 @@
                     required
                     autofocus
                     v-model="form.name"
+                    label="Name"
+
                     >
                    </v-text-field>
                     <v-text-field
@@ -46,6 +48,7 @@
                     required
                     autofocus
                     v-model="form.email"
+                    label="Email"
                     >
                    </v-text-field>
                     <v-text-field
@@ -55,6 +58,7 @@
                     name="password"
                     required
                     v-model="form.password"
+                    label="Password"
                 >
                 </v-text-field>
                               <v-card-actions>
@@ -104,3 +108,9 @@ export default {
   }
 };
 </script>
+
+<style lang="stylus" scoped>
+
+  .v-btn
+    color: white !important
+</style>
