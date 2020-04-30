@@ -58,6 +58,7 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
+             <v-btn @click.prevent="signOut">signOut</v-btn>
         </v-card-actions>
       </v-card>
     </v-menu>
@@ -66,6 +67,8 @@
 
 <script>
 import { mapGetters } from "vuex";
+import firebase from "firebase";
+
 
   export default {
  name: 'Menu',
@@ -75,6 +78,18 @@ import { mapGetters } from "vuex";
       message: false,
       hints: true,
     }),
+    methods: {
+            signOut() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace({
+            name: "GoodBye"
+          });
+        });
+    }
+    },
     computed: {
     dataAvailable () {
       return this.searchName !== null && this.searchName !== ''
