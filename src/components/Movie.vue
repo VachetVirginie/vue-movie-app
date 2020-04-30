@@ -13,36 +13,36 @@
 
   <v-container v-else>
     <app-navigation></app-navigation>
-    <v-layout wrap>
-      <v-flex xs12 mr-1 ml-1>
-        <v-card>
-          <v-img
-            :src="singleMovie.Poster"
-            aspect-ratio="1"
-          ></v-img>
-          <v-card-title primary-title>
-            <div>
-              <h2 class="headline mb-0">{{singleMovie.Title}}-{{singleMovie.Year}}</h2>
-              <p>{{ singleMovie.Plot}} </p>
-              <h3>Actors:</h3>{{singleMovie.Actors}}
-               <h4>Awards:</h4> {{singleMovie.Awards}}
-               <p>Genre: {{singleMovie.Genre}}</p>
-            </div>
+     <v-card
+    class="mx-auto"
+    max-width="400"
+  >
+    <v-img
+      class="black--text align-left ml-12"
+            max-height="550px"
+            max-width="300px"
+      :src="singleMovie.Poster"
+    >
+      <v-card-title></v-card-title>
+    </v-img>
 
-          </v-card-title>
-          <v-card-actions>
+     <h1 class="ml-4 pt-2">{{singleMovie.Title}}-{{singleMovie.Year}}</h1>
+
+    <v-card-subtitle class="pb-0">{{ singleMovie.Plot}}</v-card-subtitle>
+
+    <v-card-text class="text--primary">
+      
+      <div>{{singleMovie.Actors}}</div>
+
+      <div>{{singleMovie.Awards}}</div>
+
+      <div> {{singleMovie.Genre}} </div>
+    </v-card-text>
+
+          <v-card-actions class="center">
             <v-btn flat color="green accent-3" @click="back">back</v-btn>
           </v-card-actions>
-        </v-card>
-      </v-flex>
-    </v-layout>
-
-    <v-layout row wrap>
-      <v-flex xs12>
-        <div class="text-xs-center">
-      </div>
-      </v-flex>
-    </v-layout>
+  </v-card>
   </v-container>
 </template>
 
