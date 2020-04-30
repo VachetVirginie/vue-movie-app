@@ -6,6 +6,8 @@ import SearchMovie from '@/components/SearchMovie'
 import Home from '@/components/Home'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
+import Menu from '@/components/Menu'
+
 
 Vue.use(VueRouter)
 
@@ -42,6 +44,11 @@ export default new VueRouter({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/menu',
+      name: 'Menu',
+      component: Menu
     }
   ],
   mode: 'history'

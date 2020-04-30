@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-toolbar app v-if="user.loggedIn">
+    <v-toolbar class="d-flex wrap" app v-if="user.loggedIn">
       <v-toolbar-title class="headline text-uppercase">
         <router-link
         to='/'
@@ -26,13 +26,6 @@
       >
        <span class="mr-2">Search</span>
       </v-btn>
-        <v-switch
-        class="ml-12"
-        v-model="$vuetify.theme.dark"
-        hide-details
-        inset
-        label="Mode"
-      ></v-switch>
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
     <div class="container">
       <button
@@ -51,6 +44,7 @@
             <v-btn class="nav-item">
               <span class="nav-link" @click.prevent="signOut">Sign out</span>
             </v-btn>
+            <Menu> </Menu>
           </template>
           <template v-else>
             <li class="nav-item">
@@ -74,22 +68,36 @@
 <script>
 import { mapGetters } from "vuex";
 import firebase from "firebase";
+import Menu from '@/components/Menu'
 
 export default {
   name: 'App',
   components: {
+    Menu
   },
   data () {
     return {
       searchName: '',
-      
+      isMobile: false
     }
   },
+      beforeDestroy () {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', this.onResize, { passive: true })
+      }
+    },
+  mounted () {
+      this.onResize()
+      window.addEventListener('resize', this.onResize, { passive: true })
+    },
   methods: {
     searchMovie () {
       this.$router.push('/search/' + this.searchName)
       this.searchName = ''
     },
+          onResize () {
+        this.isMobile = window.innerWidth < 600
+      },
     signOut() {
       firebase
         .auth()
